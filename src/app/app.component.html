@@ -1,2 +1,45 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav [ngStyle]="{'width' : (screenWidth > 840) ? '15%' : '250px' }"
+         #sidenav class="sidenav" [mode]="(screenWidth > 840) ? 'side' : 'over'" 
+         [opened]="screenWidth > 840">
+        
+        <div class="logo-container padding-vert">
+            <h3 style="color:#fe8400; padding:10px;">Currency Converter</h3>
+        </div> 
+        <mat-nav-list>
+            <mat-list-item routerLink="../user/home">
+                <button mat-icon-button>
+                    <mat-icon color="primary">assessment</mat-icon>
+                </button>
+                <a matLine class="sidenav-link" routerLink="../home">Converter</a>
+            </mat-list-item>
+            <mat-divider></mat-divider> 
+            <mat-list-item routerLink="../user/receipts">
+                <button mat-icon-button>
+                    <mat-icon color="primary">receipt</mat-icon>
+                </button>
+                <a matLine class="sidenav-link" routerLink="../value">KSH Value</a>
+            </mat-list-item>
+            <mat-divider></mat-divider> 
+        </mat-nav-list>
+        
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+        <div class="top-bg">
+            <mat-toolbar class="toolbar">
+                <mat-icon color="primary" (click)="sidenav.toggle()">menu</mat-icon>
+                <span class="toolbar-spacer"></span>
+                <mat-icon matTooltip="Notifications" color="primary" class="toolbar-icon toolbar-icon-2">notifications</mat-icon>
+                <!-- <span style="color:#ef6c00; font-size:medium">
+                    Logout
+                </span> -->
+                <mat-icon matTooltip="Account" color="primary" class="toolbar-icon-1">account_circle</mat-icon>
+            </mat-toolbar>
+        </div>
+        <mat-card class="content-card">
+            <router-outlet class="content"></router-outlet>
+        </mat-card>
+    </mat-sidenav-content>
+</mat-sidenav-container>
 
 
