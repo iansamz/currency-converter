@@ -1,0 +1,6 @@
+.converter-container{
+    display:flex;
+}
+mat-form-field{
+    padding:10px;
+}
