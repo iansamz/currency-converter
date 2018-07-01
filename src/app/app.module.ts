@@ -9,6 +9,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from "@angular/http";
+import { HttpClientModule } from "@angular/common/http";
 
 import 'hammerjs';
 
@@ -32,10 +33,11 @@ import { ValueComponent } from './value/value.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [HttpClientModule, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,14 @@
 .converter-container{
     display:flex;
+    flex-direction: column;
 }
 mat-form-field{
     padding:10px;
+}
+
+.to{
+    margin-bottom: 10px;
+}
+.toVal{
+    padding:10px
 }

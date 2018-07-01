@@ -3,32 +3,30 @@
 <div class="converter-container">
   <div class="from">
     <mat-form-field>
-      <mat-select placeholder="Currency">
-        <!-- <mat-option *ngFor="let currency of currencies" [value]="currency.value">
-          {{currency.viewValue}}
-        </mat-option> -->
-        <mat-option value="option1">Option 1</mat-option>
-        <mat-option value="option2">Option 2</mat-option>
-        <mat-option value="option3">Option 3</mat-option>
+      <mat-select placeholder="Currency" [formControl]="fromCurrencyFormControl">
+        <mat-option *ngFor="let currency of currencies" [value]="currency.id" >
+          {{currency.id}}
+        </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Amount" type="number" name="from" class="">
+      <input matInput placeholder="Amount" type="number" name="fromValue" class="" [formControl]="fromValueFormControl">
     </mat-form-field>
   </div>
   <div class="to">
     <mat-form-field>
-      <mat-select placeholder="Currency">
-        <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
-          {{food.viewValue}}
-        </mat-option> -->
-        <mat-option value="option1">Option 1</mat-option>
-        <mat-option value="option2">Option 2</mat-option>
-        <mat-option value="option3">Option 3</mat-option>
+      <mat-select placeholder="Currency" [formControl]="toCurrencyFormControl">
+        <mat-option *ngFor="let currency of currencies" [value]="currency.id" >
+          {{currency.id}}
+        </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Amount" type="number" name="to" class="" disabled>
-    </mat-form-field>
+    <br>
+    <span class="toVal">Amount</span><br>
+    <span class="toVal">{{ toValue }} {{ toCurrencyFormControl.value }}</span>
+    <!-- <mat-form-field>
+      <input matInput placeholder="Amount" type="number" name="toValue" class="" [formControl]="toValueFormControl">
+    </mat-form-field> -->
   </div>
+  <button style="width: 250px;" mat-raised-button color="primary" (click)="convert()" >Convert</button>
 </div>
